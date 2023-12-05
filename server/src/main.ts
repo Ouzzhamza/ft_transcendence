@@ -15,7 +15,7 @@ async function bootstrap() {
     allowedHeaders: 'Content-Type, Accept, Authorization, X-Requested-With, Access-Control-Allow-Origin, Access-Control-Allow-Headers, Access-Control-Allow-Credentials, Access-Control-Allow-Methods',
     credentials: true,
   });
-  // app.use(cors()); // already enabled in the previous line, uncomment if the previous one doesn't work as this one
+  
   app.use(cookieParser());
   app.useGlobalPipes(new ValidationPipe({
     whitelist: true
@@ -25,8 +25,4 @@ async function bootstrap() {
 
 }
 
-// async function bootstrap() {
-//   const app = await NestFactory.create(AppModule);
-
-// }
 bootstrap();
