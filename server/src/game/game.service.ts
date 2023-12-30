@@ -341,7 +341,6 @@ export class GameService {
     });
     return;
   } catch (error) {
-    console.log(error);
   }
   }
 
@@ -431,7 +430,6 @@ export class GameService {
     });
     return;
   } catch (error) {
-    console.log(error);
   }
   }
 
@@ -454,7 +452,6 @@ export class GameService {
     });
     return;
   } catch (error) {
-    console.log(error);
   }
   }
 
@@ -493,7 +490,6 @@ export class GameService {
     });
     return;
   } catch (error) {
-    console.log(error);
   }
   }
 

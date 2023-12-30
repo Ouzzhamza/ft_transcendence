@@ -88,7 +88,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
       const users = await this.userService.getChatList(User);
       client.emit(`getChatList`, users);
     } catch (error) {
-      console.error(`Error in getting users`, error);
+      
     }
   }
 
@@ -124,7 +124,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         }
       }
     } catch (error) {
-      console.error(`Error in sending notification`, error);
+      
     }
   }
 
@@ -156,7 +156,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
 
       return `DMs room created`;
     } catch (error) {
-      console.error(`Error in creating Room`, error);
+      
     }
   }
   //!---------------UPDATE CHAT LIST------------------------!//
@@ -178,7 +178,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         this.server.to(socket.id).emit(`updateChatList`, friedList);
       }
     } catch (error) {
-      console.error(`Error in updating chat list`, error);
+      
     }
   }
 
@@ -225,7 +225,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
       this.server.to(room).emit(`receivedPrivateMessage`, { message });
 
     } catch (error) {
-      console.error(`Error in sending private message`, error);
+      
     }
   }
 
@@ -263,7 +263,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
       }
       return "User blocked";
     } catch (error) {
-      console.error(`Error in blocking user`, error);
+      
     }
   }
 
@@ -290,7 +290,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
       }
       return "User unblocked";
     } catch (error) {
-      console.error(`Error in unblocking user`, error);
+      
     }
   }
 
@@ -308,7 +308,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         this.server.to(socket.id).emit(`getNotifications`, notifications);
       });
     } catch (error) {
-      console.error(`Error in getting notifications`, error);
+      
     }
   }
 
@@ -333,7 +333,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         this.server.to(socket.id).emit(`getNotifications`, notifications);
       });
     } catch (error) {
-      console.error(`Error in reading notification`, error);
+      
     }
   }
 
@@ -380,7 +380,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
 
       return "Friend request sent";
     } catch (error) {
-      console.error(`Error in sending freind request`, error);
+      
     }
   }
 
@@ -422,7 +422,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         })
       }
     } catch (error) {
-      console.error(`Error in accepting freind request`, error);
+      
     }
   }
 
@@ -454,7 +454,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         this.server.to(socket.id).emit(`FriendshipStatus`, FriendResponce);
       })
     } catch (error) {
-      console.error(`Error in rejecting freind request`, error);
+      
     }
   }
 
@@ -495,7 +495,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
       }
       return "Friend removed";
     } catch (error) {
-      console.error(`Error in removing freind`, error);
+      
     }
   }
 
@@ -520,7 +520,7 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         }
       }
     } catch (error) {
-      console.error(`Error in removing chat user`, error);
+      
     }
   }
 
@@ -1029,7 +1029,6 @@ export class ChatGateway implements OnGatewayInit, OnGatewayConnection {
         }
       }
     } catch (error) {
-      console.log(error);
       this.connectedUsers[client.handshake.auth.id].map((socket) => {
         this.server
           .to(socket.id)
