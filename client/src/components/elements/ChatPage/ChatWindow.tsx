@@ -321,7 +321,7 @@ export default function ChatWindow() {
   }, [selected]);
 
   return (
-    <div className="justify-between w-[80%] flex-col gap-[15px] h-full pt-[120px] flex-1">
+    <div className="justify-between w-[80%] h-[95%] flex-col gap-[15px] pt-[120px] flex-1">
       <div
         className=" flex flex-col gap-[10px] overflow-y-scroll no-scrollbar z-0 h-[94%] pb-12 "
         ref={chatContainer}
@@ -345,7 +345,7 @@ export default function ChatWindow() {
       </div>
       <form
         onSubmit={handleSubmit(handleNewMessage)}
-        className="h-[55px] mb-[15px] flex justify-around items-center"
+        className="h-[55px] mb-[15px] flex justify-around items-center "
       >
         <Input
           {...register("newmessage")}
